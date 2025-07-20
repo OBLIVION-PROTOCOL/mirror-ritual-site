@@ -1,0 +1,1 @@
+// Sigil/code unlock logic placeholder
