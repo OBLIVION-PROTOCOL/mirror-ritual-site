@@ -1,10 +1,8 @@
-# Mirror Ritual
+# Mirror Ritual v1
 
-This is the initial deployable version of the Mirror Ritual project. It contains:
-- Static HTML structure
-- GitHub-ready folder layout
+This is the initial public version of Mirror Ritual.
 
-## Next Steps
-- Add interactivity (JS)
-- Integrate backend (Node + SQLite)
-- Connect Vercel auto-deploy
+## Features
+- Static HTML page
+- Styling with CSS
+- Placeholder JavaScript for future logic
