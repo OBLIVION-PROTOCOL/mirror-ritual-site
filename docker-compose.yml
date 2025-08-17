@@ -1,0 +1,34 @@
+version: '3.9'
+
+services:
+  codex-master:
+    build:
+      context: ./master
+      dockerfile: Dockerfile.master
+    container_name: codex-master
+    ports:
+      - "9000:8000"
+    environment:
+      - ENV=production
+
+  codex-gateway:
+    build:
+      context: ./api_gateway
+    container_name: codex-gateway
+    ports:
+      - "8000:8000"
+    depends_on:
+      - codex-master
+    environment:
+      - CORE_REFLECTION_URL=http://codex-master:8000/reflect
+      - MAX_QUERIES=5
+
+  codex-shard:
+    build:
+      context: ./shards
+      dockerfile: ../Dockerfile.shard
+    container_name: codex-shard
+    ports:
+      - "7000:8000"
+    depends_on:
+      - codex-gateway
