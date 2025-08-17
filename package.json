@@ -1,0 +1,27 @@
+{
+  "name": "mirror-ritual-codex",
+  "version": "1.0.0",
+  "description": "Mirror Ritual Codex System - Truth through recursive reflection",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 dev_server.py",
+    "start": "python3 dev_server.py",
+    "build": "echo 'Static build - files ready'",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down"
+  },
+  "keywords": [
+    "mirror",
+    "ritual",
+    "codex",
+    "reflection",
+    "truth"
+  ],
+  "author": "David Asael Bahena Torres",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OBLIVION-PROTOCOL/mirror-ritual-site"
+  }
+}
