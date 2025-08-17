@@ -89,9 +89,13 @@ async def serve_index():
     """Serve the main index.html"""
     return FileResponse("index.html")
 
-@app.get("/{filename}")
+@app.get("/{filename:path}")
 async def serve_static_file(filename: str):
     """Serve static files"""
+    # Security check - prevent directory traversal
+    if '..' in filename or filename.startswith('/'):
+        raise HTTPException(status_code=403, detail="Access denied")
+    
     file_path = Path(filename)
     if file_path.exists() and file_path.is_file():
         return FileResponse(filename)
